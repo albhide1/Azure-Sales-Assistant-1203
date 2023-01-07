@@ -1,9 +1,8 @@
 {
-  "name": "pages",
+  "name": "scratchpad",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://tranquilvarun.github.io/Do-I-Need-to-See-a-Doctor",
-
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
