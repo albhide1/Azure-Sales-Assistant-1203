@@ -36,7 +36,7 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Personal "Do I Need to See a Doctor123123?" Bot</h1>
+            <h1>Personal "Do I Need to See a Doctor?" Bot</h1>
           </div>
           <div className="header-subtitle">
             <h2>I will fill this in later, I promise!</h2>
