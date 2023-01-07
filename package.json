@@ -1,6 +1,7 @@
 {
-  "name": "pages",
+  "name": "scratchpad",
   "version": "0.1.0",
+  "homepage": "https://gitname.github.io/Do-I-Need-to-See-a-Doctor"
   "private": true,
   "scripts": {
     "predeploy": "npm run build",
