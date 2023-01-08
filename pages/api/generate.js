@@ -7,30 +7,20 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 const basePromptPrefix =
 `
-Please advise me whether I should go to the doctor based on the following specifications. Start your response with "Yes, you should see a doctor" or "No, you probably do not need to see a doctor. If the specifications below are mild, not serious, or not-threatening, advise not to go to the doctor. Include a small medical diagnosis and specifically name two possible associated diseases/ailments. Also include what the patient should do about their ailment. Mention which symptoms are associated with the ailment you diagnose. If you recommend that the patient see a doctor, specify which type of doctor.
+Write me notes for an upcoming call l have. These notes should include 5 key talking points for the Microsoft Azure product and the customer mentioned below. Put these five talking points in a section with the header “Key Talking Points”. These talking points should be specifically for the type of Microsoft Azure product I am selling, not for Microsoft Azure as a whole. For example, if I specify that I am selling Microsoft Synapse, my talking points should be based around Microsoft Synapse. 
 
-Symptoms:  Weak, Tired
-Duration: 1 Day
-Age: 18
-Weight: 180
-Additional information: I have been on the Keto diet for the last day.
-Should I go to the doctor: No, you probably do not need to see a doctor. There are many possible causes for feeling weak and tired, including your recent switch to the Keto diet. We advise you to get sleep and persevere through this tough time. However, if the symptoms persist, or you experience swelling or trouble breathing, we do recommend that you see a general care doctor.
+Base your language on the customer’s role at the company and how technical you understand the customer is. For example, if the customer holds a technical role at the company they are working at (CTO, CIO, etc), use more technical and specific language. In this scenario, specifically to the technology our Microsoft Azure product uses and how that technology is applicable to the customer’s oraganization. Alternatively, if the customer works a role in business development, use more general and broad language; still mention all relevant information, just with less technical language. In these five talking points, incorporate specific references to the company that the customer is working for, but do not make that the entire point of the talking points.
 
-Symptoms: Inflammation, Cough, Weight Loss, Chills, Fever
-Duration: 1 Week
-Age: 60
-Weight: 250
-Additional information: I recently went swimming in a lake.
-Should I go to the doctor: Yes, you should see a doctor. You may have Tuberculosis (TB) based on your inflammation and cough. TB is a bacterial infection caused by Mycobacterium tuberculosis. It is a serious and potentially life-threatening illness that can affect the lungs and other parts of the body. See a doctor immediately, preferably a pulmonologist or lung specialist.
+Additionally, provide 5 specific use-cases and examples for whichever company the customer is working in. All of this information should be specific to the company at hand, reference the company name in each point of your response. Avoid general insights that can be applicable at any company. For example, if I am selling Microsoft Synapse to Starbucks, discuss the reduce of waste for cups/plastic, analyzing customer sentiment for components like drink-quality, and targetted campaigns through the Starbucks app. Alternatively, if I am selling Microsoft Synapse to the Bechtel Corporation, discuss how we can improve the efficiency of their projects, data management, and on-ground operations. Put this information in a separate section of your response with the header “Specific Use Cases for (INPUT COMPANY NAME HERE)”. 
 
-Symptoms: Itch, Redness
-Duration: 1 Day
-Age: 16
-Weight: 140
-Additional information: I ran in the grass outside.
-Should I go to the doctor:   No, you probably do not need to see a doctor. This is most likely an allergic reaction due to the grass you ran in. Try to take an antihistamine, soothing lotion, and an ice pack to reduce the discomfort and itchiness. If the symptoms persist, or you experience swelling or trouble breathing, it’s best to see your doctor, preferably a dermatologist.
+Base your response on the following inputs. Do not base your response on a random product, name of customer, role at company, or company of customer:
+Product You are Pitching: Microsoft Synapse
+Name of Customer: Richard Lewis
+Role at Company: Chief Technology Officer
+Company of Customer: McDonalds
 
-Should I go to the doctor:
+Response:
+
 `;
 const generateAction = async (req, res) => {
   // Run first prompt
