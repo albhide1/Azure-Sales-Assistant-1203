@@ -14,12 +14,6 @@ Base your language on the customer’s role at the company and how technical you
 Additionally, provide 5 specific use-cases and examples for whichever company the customer is working in. All of this information should be specific to the company at hand, reference the company name in each point of your response. Avoid general insights that can be applicable at any company. For example, if I am selling Microsoft Synapse to Starbucks, discuss the reduce of waste for cups/plastic, analyzing customer sentiment for components like drink-quality, and targetted campaigns through the Starbucks app. Alternatively, if I am selling Microsoft Synapse to the Bechtel Corporation, discuss how we can improve the efficiency of their projects, data management, and on-ground operations. Put this information in a separate section of your response with the header “Specific Use Cases for (INPUT COMPANY NAME HERE)”. 
 
 Base your response on the following inputs. Do not base your response on a random product, name of customer, role at company, or company of customer:
-Product You are Pitching: Microsoft Synapse
-Name of Customer: Richard Lewis
-Role at Company: Chief Technology Officer
-Company of Customer: McDonalds
-
-Response:
 
 `;
 const generateAction = async (req, res) => {
