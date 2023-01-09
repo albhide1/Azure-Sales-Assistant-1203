@@ -4,7 +4,7 @@ import buildspaceLogo from '../assets/buildspace-logo.png';
 import { useState } from 'react';
 
 const Home = () => {
-  const [userInput, setUserInput] = useState('');
+  const [userInput, setUserInput] = useState('Product You are Pitching:\nName of Customer:\nRole at Company: \nCompany of Customer:');
   const [apiOutput, setApiOutput] = useState('')
   const [isGenerating, setIsGenerating] = useState(false)
 
@@ -36,13 +36,22 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Personal "Do I Need to See a Doctor?" Bot</h1>
+            <h1>Azure Sales Assistant</h1>
           </div>
           <div className="header-subtitle">
-            <h2>I will fill this in later, I promise!</h2>
+            <center><h2>Generate Talking Points and Company-Specific Use Cases</h2></center>
+            <h3>This tool will allow you to develop custom talking points and use-cases for your sales efforts. Simpily input the Microsoft Azure product you are selling, the name of your customer, the name of your customer's company, and their role at their organization, and this technology will generate key talking points and specific use-cases for your customer's organization. Note that these talking points and use-cases are tailored to the size of the company you are working with and the technical expertise of your client (based on their role at the organization).</h3>
+            <hr></hr>
+            <center><h3>
+            <b>Example</b>
+            <br/> Product You are Pitching: Synapse
+            <br/> Name of Customer: Andy Johansen
+            <br/> Role at Company: Chief Technology Officer
+            <br/> Company: McDonalds </h3> </center>
           </div>
         </div>
         <div className="prompt-container">
+          <h3><b>Input Here</b></h3>
           <textarea
             className="prompt-box"
             placeholder="start typing here"
